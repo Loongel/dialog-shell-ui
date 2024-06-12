@@ -31,10 +31,12 @@ sudo apt install dialog
 
 - **克隆项目到本地并设置必要的执行权限：**
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/Loongel/dialog-shell-ui.git
 chmod +x dialog-shell-ui/*.sh dialog-shell-ui/lib/*.sh
-cp dialog-shell-ui/run.sh.copy_to_parents_folder run_ui.sh && chmod +x run_ui.sh
+cp dialog-shell-ui/run_ui.sh.copy_to_parents_folder run_ui.sh && chmod +x run_ui.sh
 # 配置修改文件 dialog-shell-ui/*.conf 添加UI功能
+# 复制配置文件
+# for file in dialog-shell-ui/conf/*.conf.template; do mv "$file" "${file%.template}"; done && 
 # ./run_ui.sh
 ```
 
