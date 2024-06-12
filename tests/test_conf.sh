@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 确保脚本在tests目录下执行
-script_dir=$(dirname "$(readlink -f "$0")")/..
+script_dir="$(dirname "$(readlink -f "$0")")/.."
 cd $script_dir
 
 # 日志文件路径
@@ -27,6 +27,7 @@ log_and_echo() {
 ##### 测试脚本
 # 开始测试
 log_and_echo "开始测试配置文件..."
+log_and_echo "$script_dir"
 
 # 测试每个.conf文件
 for conf_file in conf/*.conf; do
@@ -45,6 +46,7 @@ for conf_file in conf/*.conf; do
     check_status=$(check_function_status)
     if [[ $check_status -eq 1 ]]; then
         log_and_echo "\t[错误]: [$name] 禁用失败" 
+        log_and_echo "\tdisable_command: $disable_command"
     else
         log_and_echo "\t[$name] 禁用成功" 
         test_rs2=1
@@ -55,6 +57,8 @@ for conf_file in conf/*.conf; do
     check_status=$(check_function_status)
     if [[ $check_status -eq 0 ]]; then
         log_and_echo "\t[错误]: [$name] 启用失败" 
+        log_and_echo "\tenable_command: $enable_command"
+        read -p "      waiting for debug. pess any key to continue." input
     else
         log_and_echo "\t[$name] 启用成功" 
         test_rs3=1
@@ -65,6 +69,7 @@ for conf_file in conf/*.conf; do
     check_status=$(check_function_status)
     if [[ $check_status -eq 1 ]]; then
         log_and_echo "\t[错误]: [$name] 最终禁用失败" 
+        log_and_echo "\tdisable_command: $disable_command"
     else
         log_and_echo "\t[$name] 最终禁用成功" 
         test_rs4=1
@@ -78,4 +83,4 @@ for conf_file in conf/*.conf; do
 
 done
 
-log_and_echo "\t配置文件测试完成。" 
+log_and_echo "所有配置文件测试完成。" 

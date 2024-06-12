@@ -14,6 +14,9 @@ debug_mode=1
 #echo "脚本文件夹：$script_dir"
 #read -p "Type 'yes' to continue: " input
 
+# 检查项目权限
+sudo chown $(whoami) -R $script_dir
+
 # 日志路径
 log_file="$script_dir/logs/dialog-shell-ui.log"
 
