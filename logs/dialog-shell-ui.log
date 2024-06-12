@@ -1,8 +1,0 @@
-
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT 人工编辑]: check_command - stat -c '%U' ../MetaGPT | grep abc， result: 0
-abc
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT 人工编辑]: check_command - stat -c '%U' ../MetaGPT | grep abc， result: 1
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT 人工编辑]: check_command - stat -c '%U' ../MetaGPT | grep abc， result: 0
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT AI编辑]: check_command - [ -L '/config/workspace/dialog-shell-ui/tests/../../MetaGPT/workspace/project-of-myself_metagpt' ] && [  = /config/workspace/MetaGPT ]， result: 0
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT AI编辑]: check_command - [ -L '/config/workspace/dialog-shell-ui/tests/../../MetaGPT/workspace/project-of-myself_metagpt' ] && [  = /config/workspace/MetaGPT ]， result: 0
-2024-06-12 08:02:59 - check_function_status() > [MetaGPT AI编辑]: check_command - [ -L '/config/workspace/dialog-shell-ui/tests/../../MetaGPT/workspace/project-of-myself_metagpt' ] && [  = /config/workspace/MetaGPT ]， result: 0
