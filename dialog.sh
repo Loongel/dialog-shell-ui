@@ -3,14 +3,14 @@
 
 # 检查脚本运行目录,并存入script_dir,供各功能模块引用
 script_dir=$(dirname "$(readlink -f "$0")")
-if [ "$(pwd)" != "$script_dir" ]; then
-    echo "错误：脚本必须在其所在目录下运行。当前目录：$(pwd)，脚本目录：$script_dir"
-    # exit 1
-fi
+#if [ "$(pwd)" != "$script_dir" ]; then
+#    echo "提示：脚本未在其所在目录下运行。当前目录：$(pwd)，脚本目录：$script_dir"
+#    # exit 1
+#fi
 cd $script_dir
 
 # 调试模式，1为开启，0为关闭, 2为详细日志（单条命令）
-debug_mode=1
+debug_mode=0
 #echo "脚本文件夹：$script_dir"
 #read -p "Type 'yes' to continue: " input
 
