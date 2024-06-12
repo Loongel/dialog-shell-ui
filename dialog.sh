@@ -18,7 +18,9 @@ debug_mode=0
 sudo chown $(whoami) -R $script_dir
 
 # 日志路径
-log_file="$script_dir/logs/dialog-shell-ui.log"
+log_path = $script_dir/logs
+log_file="$log_path/dialog-shell-ui.log"
+mkdir -p $log_path
 
 # 加载公共库
 source lib/utils.sh
